@@ -1,9 +1,5 @@
 const Spotify = require('spotify-web-api-node');
 const HttpRequest = require('axios')
-const fs = require('fs')
-
-const artists = require("./artists.json")
-const artistsDone = require("./artists_done.json")
 
 const GroupMeBotsCreateMessageUrl = "https://api.groupme.com/v3/bots/post?token="+process.env["GROUPME_API_TOKEN"]
 const wikipediaUrlSearch = "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exlimit=max&explaintext&titles="
@@ -12,10 +8,8 @@ const wikipediaUrlHtml = "https://en.wikipedia.org/wiki/"
 const aclDate = new Date(2021, 10 - 1, 1);
 const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
 
-module.exports = async (context, myTimer) => {
-    const currentArtist = artists.filter(artist => {
-        return !artistsDone.some(done => { return done.spotify === artist.spotify});
-    })[0]
+module.exports = async (context, myTimer, artistsIn) => {
+    const currentArtist = artistsIn.pop()
 
     const today = new Date();
     const diffDays = Math.round(Math.abs((aclDate - today) / oneDay));
@@ -26,11 +20,12 @@ module.exports = async (context, myTimer) => {
     })
 
     if (!currentArtist) {
-        return HttpRequest
+        await HttpRequest
             .post(GroupMeBotsCreateMessageUrl, {
                 bot_id: process.env["GROUPME_BOT_ID"],
                 text: "No more Artists!\nDays until ACL: " + diffDays
             }).catch(err => {console.log(err)})
+        return { artistsOut: artistsIn }
     }
 
     await spotifyClient.clientCredentialsGrant().then(data => { spotifyClient.setAccessToken(data.body['access_token']) });
@@ -86,6 +81,5 @@ module.exports = async (context, myTimer) => {
             bot_id: process.env["GROUPME_BOT_ID"],
             text: topSongsText
         })
-    artistsDone.push(currentArtist)
-    return fs.writeFile(__dirname + "/artists_done.json", JSON.stringify(artistsDone), err => {if(err) throw err})
+    return { artistsOut: artistsIn }
 };
