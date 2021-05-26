@@ -33,12 +33,31 @@ module.exports = async (context, myTimer, artistsIn) => {
     const artistId = await spotifyClient
         .searchArtists(currentArtist.spotify)
         .then(res => {
-            return res.body.artists.items[0].id
+            const artists = res.body.artists.items.filter(item => {
+                console.log(item.name)
+                return item.name === currentArtist.spotify
+            })
+            return artists[0].id
+        }).catch(err => {
+            return undefined
         })
 
-    const artistTopSongs = await spotifyClient
-        .getArtistTopTracks(artistId, 'US')
-        .then(res => { return res.body.tracks })
+    let topSongsText = "Top Tracks: \n"
+
+    if (!artistId) {
+        topSongsText += "Could not find anything on spotify, here's a YouTube search:\n" +
+        "https://www.youtube.com/results?search_query=" + currentArtist.spotify.split(" ").join("+")
+    } else {
+        const artistTopSongs = await spotifyClient
+            .getArtistTopTracks(artistId, 'US')
+            .then(res => {
+                return res.body.tracks
+            })
+
+        artistTopSongs.forEach(track => {
+            topSongsText += track.name + ": " + track.external_urls.spotify + "\n"
+        })
+    }
 
     let artistText
     if (currentArtist.hasOwnProperty('wikipedia')) {
@@ -63,10 +82,6 @@ module.exports = async (context, myTimer, artistsIn) => {
         artistText = "Could not find any more info on this artist, heres a google search: https://google.com/search?q=" + currentArtist.spotify
     }
 
-    let topSongsText = "Top Tracks: \n"
-    artistTopSongs.forEach(track => {
-        topSongsText += track.name + ": " + track.external_urls.spotify + "\n"
-    })
     const wikipediaMessageText = "The Artist of the Day is: " + currentArtist.spotify + "\n" +
         "Days until ACL: " + diffDays + "\n\n" +
         artistText;
