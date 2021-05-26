@@ -28,4 +28,4 @@ Once the necessary values are generated, add them to `local.settings.json`
 ## Deploying
 - Set up an Azure Function App for node in the Azure portal
 - Run `az login`
-- Publish the function with `func azure publish <functionapp_name>`
+- Publish the function with `func azure functionapp publish <functionapp_name>`
