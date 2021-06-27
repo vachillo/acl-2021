@@ -8,7 +8,7 @@ const wikipediaUrlHtml = "https://en.wikipedia.org/wiki/"
 const aclDate = new Date(2021, 10 - 1, 1);
 const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
 
-module.exports = async (context, myTimer, artistsIn) => {
+module.exports = async (context, myTimer, artistsIn, artistsInWeek) => {
     const currentArtist = artistsIn.pop()
 
     const today = new Date();
@@ -96,5 +96,6 @@ module.exports = async (context, myTimer, artistsIn) => {
             bot_id: process.env["GROUPME_BOT_ID"],
             text: topSongsText
         })
-    return { artistsOut: artistsIn }
+    artistsInWeek.push(currentArtist)
+    return { artistsOut: artistsIn , artistsOutWeek: artistsInWeek }
 };

@@ -4,21 +4,7 @@
       "name": "myTimer",
       "type": "timerTrigger",
       "direction": "in",
-      "schedule": "0 0 13 * * 1-5"
-    },
-    {
-      "name": "artistsIn",
-      "type": "blob",
-      "path": "azure-webjobs-hosts/artists.json",
-      "connection": "AzureWebJobsStorage",
-      "direction": "in"
-    },
-    {
-      "name": "artistsOut",
-      "type": "blob",
-      "path": "azure-webjobs-hosts/artists.json",
-      "connection": "AzureWebJobsStorage",
-      "direction": "out"
+      "schedule": "0 0 14 * * 6"
     },
     {
       "name": "artistsInWeek",
