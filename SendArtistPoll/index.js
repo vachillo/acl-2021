@@ -18,8 +18,8 @@ module.exports = async (context, myTimer, artistsInWeek) => {
 
     await spotifyClient.clientCredentialsGrant().then(data => { spotifyClient.setAccessToken(data.body['access_token']) });
 
-    const wikipediaMessageText = "Days until ACL: " + diffDays + "\n\n" +
-            "Here's the artists from the past week, vote for your favorite!";
+    const wikipediaMessageText = "Artist Weekly Recap\nDays until ACL: " + diffDays + "\n\n" +
+            "Here's a recap of the artists from the past week, vote for your favorite!";
 
     await HttpRequest
         .post(GroupMeBotsCreateMessageUrl, {
