@@ -1,0 +1,19 @@
+{
+  "bindings": [
+    {
+      "name": "myTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 0 13 * * 3",
+      "runOnStartup" : false
+    },
+    {
+      "name": "artistsIn",
+      "type": "blob",
+      "path": "azure-webjobs-hosts/artistsIn.json",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    }
+  ],
+  "disabled": true
+}

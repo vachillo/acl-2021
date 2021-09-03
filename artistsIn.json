@@ -1,0 +1,74 @@
+[
+  {
+    "spotify": "George Strait",
+    "wikipedia": "George Strait",
+    "day" : "Friday",
+    "live_youtube_description" : "George Strait Live! 1987\nPlatinum-selling country music singer George Strait, is captured for the first time on video in this dynamite concert performance shot live at the Dallas Reunion Arena. The multiple award-winning performer, backed by his famed Ace In The Hole Band, whips up the audience performing all of his greatest hits. So get ready for some of the best unadorned country music around from George Strait",
+    "live_youtube_link" : "https://www.youtube.com/watch?v=Y7MVFr6fHyQ",
+    "album_wikipedia" : "Strait from the Heart",
+    "album_spotify" : "Strait From The Heart",
+    "music_video_title" : "Check Yes or No",
+    "music_video_link" : "https://www.youtube.com/watch?v=NHxS8wlDngI",
+    "merch_link" : "https://www.richardsandsouthern.com/collections/george-strait"
+  },
+  {
+    "spotify": "Miley Cyrus",
+    "wikipedia": "Miley Cyrus",
+    "day" : "Friday",
+    "live_youtube_description" : "Playlist - BBC Radio 1 Live Lounge",
+    "live_youtube_link" : "https://www.youtube.com/watch?v=AxZl2cFvjRs&list=PLitP5HM3m0-D5a-S1xix-dZfAPTFUw9b8",
+    "album_wikipedia" : "Plastic Hearts",
+    "album_spotify" : "Plastic Hearts",
+    "music_video_title" : "Prisoner (Official Video) ft. Dua Lipa",
+    "music_video_link" : "https://www.youtube.com/watch?v=0ir1qkPXPVM",
+    "merch_link" : "https://shop.mileycyrus.com/"
+  },
+  {
+    "spotify": "Billie Eilish",
+    "wikipedia": "Billie Eilish",
+    "day" : "Saturday",
+    "live_youtube_description" : "Tiny Desk (Home) Concert",
+    "live_youtube_link" : "https://www.youtube.com/watch?v=4sZ2_aGsLKU",
+    "album_wikipedia" : "Happier Than Ever",
+    "album_spotify" : "Happier Than Ever",
+    "music_video_title" : "Happier Than Ever (Official Music Video)",
+    "music_video_link" : "https://www.youtube.com/watch?v=5GJWxDKyk3A",
+    "merch_link" : "https://store.billieeilish.com/"
+  },
+  {
+    "spotify": "RÜFÜS DU SOL",
+    "wikipedia": "Rüfüs Du Sol",
+    "day" : "Saturday",
+    "live_youtube_description" : "Live From Joshua Tree",
+    "live_youtube_link" : "https://www.youtube.com/watch?v=Zy4KtD98S2c",
+    "album_wikipedia" : "Solace (Rüfüs Du Sol album)",
+    "album_spotify" : "Solace",
+    "music_video_title" : "Next To Me (Official Music Video)",
+    "music_video_link" : "https://www.youtube.com/watch?v=GPXiL6ynVG8",
+    "merch_link" : "https://store.rufusdusol.com/"
+  },
+  {
+    "wikipedia": "Tyler, the Creator",
+    "spotify": "Tyler, The Creator",
+    "day" : "Sunday",
+    "live_youtube_description" : "Live at Lollapalooza 2021",
+    "live_youtube_link" : "https://www.youtube.com/watch?v=QYajBFraLJ0",
+    "album_wikipedia" : "Call Me If You Get Lost",
+    "album_spotify" : "CALL ME IF YOU GET LOST",
+    "music_video_title" : "JUGGERNAUT",
+    "music_video_link" : "https://www.youtube.com/watch?v=icoOOiSlKK0",
+    "merch_link" : "https://golfwang.com/collections/new"
+  },
+  {
+    "wikipedia": "Duran Duran",
+    "spotify": "Duran Duran",
+    "day" : "Sunday",
+    "live_youtube_description" : "Lollapalooza Argentina 2017 Full Concert",
+    "live_youtube_link" : "https://www.youtube.com/watch?v=ZsMq1LLZrVQ",
+    "album_wikipedia" : "Rio (Duran Duran album)",
+    "album_spotify" : "Rio (2001 Remaster)",
+    "music_video_title" : "Hungry like the Wolf (Official Music Video)",
+    "music_video_link" : "https://www.youtube.com/watch?v=oJL-lCzEXgI",
+    "merch_link" : "https://duranduranofficialstore.com/"
+  }
+]

@@ -7,16 +7,16 @@
       "schedule": "0 0 14 * * 6"
     },
     {
-      "name": "artistsInWeek",
+      "name": "artistsIn",
       "type": "blob",
-      "path": "azure-webjobs-hosts/artists_week.json",
+      "path": "azure-webjobs-hosts/artistsIn.json",
       "connection": "AzureWebJobsStorage",
       "direction": "in"
     },
     {
-      "name": "artistsOutWeek",
+      "name": "artistsOut",
       "type": "blob",
-      "path": "azure-webjobs-hosts/artists_week.json",
+      "path": "azure-webjobs-hosts/artistsIn.json",
       "connection": "AzureWebJobsStorage",
       "direction": "out"
     }

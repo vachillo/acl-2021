@@ -23,7 +23,7 @@ module.exports = async (context, myTimer, artistsIn, artistsInWeek) => {
         await HttpRequest
             .post(GroupMeBotsCreateMessageUrl, {
                 bot_id: process.env["GROUPME_BOT_ID"],
-                text: "No more Artists!\nDays until ACL: " + diffDays
+                text: "No more Artists! But what about the headliners...\nDays until ACL: " + diffDays
             }).catch(err => {console.log(err)})
         return { artistsOut: artistsIn }
     }
