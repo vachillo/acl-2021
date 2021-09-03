@@ -1,0 +1,26 @@
+{
+  "bindings": [
+    {
+      "name": "myTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 0 14 * * 0",
+      "runOnStartup" : false
+    },
+    {
+      "name": "food",
+      "type": "blob",
+      "path": "azure-webjobs-hosts/food.json",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "name": "foodOut",
+      "type": "blob",
+      "path": "azure-webjobs-hosts/food.json",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
