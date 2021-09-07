@@ -9,11 +9,12 @@ const aclDate = new Date(2021, 10 - 1, 1);
 const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
 
 module.exports = async (context, myTimer, artistsIn) => {
+    const artistsInArr = artistsIn.slice(0, 2)
 
     const today = new Date();
     const diffDays = Math.round(Math.abs((aclDate - today) / oneDay));
 
-    const currentDay = artistsIn[0].day
+    const currentDay = artistsInArr[0].day
 
     const spotifyClient = new Spotify({
         clientId: process.env["SPOTIFY_CLIENT_ID"],
@@ -23,7 +24,7 @@ module.exports = async (context, myTimer, artistsIn) => {
     await spotifyClient.clientCredentialsGrant().then(data => { spotifyClient.setAccessToken(data.body['access_token']) });
 
     const headlinerText = "The Headliners for " + currentDay + " :\n"
-        + artistsIn[0].wikipedia + "\n" + artistsIn[1].wikipedia + "\n" +
+        + artistsInArr[0].wikipedia + "\n" + artistsInArr[1].wikipedia + "\n" +
         "Days until ACL: " + diffDays + "\n\n" +
         "Today is: Live Show";
 
@@ -33,7 +34,7 @@ module.exports = async (context, myTimer, artistsIn) => {
             text: headlinerText
         })
 
-    for (const artist of artistsIn) { // Send link to live show
+    for (const artist of artistsInArr) { // Send link to live show
 
         let artistText = artist.wikipedia + "\n\n" +
             artist.live_youtube_description + "\n" +
